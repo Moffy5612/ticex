@@ -1,0 +1,7 @@
+{
+    "replace": false,
+    "values": [
+        "#ticex:casts/single_use/slashblade_blade",
+        "#ticex:casts/single_use/slashblade_saya"
+    ]
+}

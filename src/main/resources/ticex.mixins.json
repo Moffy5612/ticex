@@ -1,0 +1,10 @@
+{
+    "package": "com.moffy5612.ticex.mixin",
+    "mixins": [
+      "PlayerRendererMixin"
+    ],
+    "refmap": "ticex.refmap.json",
+    "required": true,
+    "minVersion": "0.8",
+    "compatibilityLevel": "JAVA_8"
+  }

@@ -1,0 +1,37 @@
+{
+  "type": "tconstruct:modifier",
+  "inputs": [
+    { "item": "draconicevolution:draconium_core" },
+    { "item": "minecraft:golden_apple" ,"amount_needed": 2},
+    { "item": "minecraft:ender_eye" ,"amount_needed": 2},
+    { "tag": "forge:gems/diamond" ,"amount_needed": 2},
+    { "item": "draconicevolution:module_core" }
+  ],
+  "tools": [
+    { "tag": "tconstruct:modifiable/melee" },
+    { "tag": "tconstruct:modifiable/harvest" }
+  ],
+  "slots": {
+    "abilities": 1
+  },
+  "requirements": {
+    "options": [
+      {
+        "name": "tconstruct:netherite",
+        "level": 1
+      },
+      {
+        "name": "tconstruct:reinforced",
+        "level": 5
+      }
+    ],
+    "matches_needed": 2,
+    "error": "recipe.ticex.modifier.evolved_requirements_1"
+  },
+  "allow_crystal": true,
+  "result": {
+    "name": "ticex:evolved",
+    "level": 1
+  },
+  "max_level": 1
+}

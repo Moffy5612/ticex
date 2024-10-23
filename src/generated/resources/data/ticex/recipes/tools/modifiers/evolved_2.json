@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:modifier",
+  "inputs": [
+    { "item": "draconicevolution:wyvern_core" },
+    { "item": "draconicevolution:draconium_core","amount_needed": 2 },
+    { "item": "minecraft:nether_star" ,"amount_needed": 2},
+    { "tag": "forge:ingots/netherite" ,"amount_needed": 2},
+    { "item": "draconicevolution:module_core" }
+  ],
+  "tools": [
+    { "tag": "tconstruct:modifiable/melee" },
+    { "tag": "tconstruct:modifiable/harvest" }
+  ],
+  "requirements": {
+    "name": "ticex:evolved",
+    "level": 1,
+    "error": "recipe.ticex.modifier.evolved_requirements_2"
+  },
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": true,
+  "result": {
+    "name": "ticex:evolved",
+    "level": 1
+  },
+  "max_level": 2
+}

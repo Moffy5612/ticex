@@ -1,0 +1,37 @@
+{
+    "translation_key": "item.ticex.slashblade",
+    "icon": {
+      "item": "ticex:slashblade",
+      "nbt": "{Damage:0,tic_broken:0b,tic_display:1b,tic_materials:[\"tconstruct:ui_render#head\",\"tconstruct:ui_render#handle\",\"tconstruct:ui_render#extra\",\"tconstruct:ui_render#large\",\"tconstruct:ui_render#extra_large\"]}"
+    },
+    "sortIndex": 99,
+    "input_slots": [
+      {
+        "icon": "ticex:slashblade_blade",
+        "translation_key": "item.ticex.slashblade_blade",
+        "x": 30,
+        "y": 44,
+        "filter": {
+          "item": "ticex:slashblade_blade"
+        }
+      },
+      {
+        "icon": "tconstruct:tough_handle",
+        "translation_key": "item.tconstruct.tough_handle",
+        "x": 12,
+        "y": 62,
+        "filter": {
+          "item": "tconstruct:tough_handle"
+        }
+      },
+      {
+        "icon": "ticex:slashblade_saya",
+        "translation_key": "item.ticex.slashblade_saya",
+        "x": 48,
+        "y": 26,
+        "filter": {
+          "item": "ticex:slashblade_saya"
+        }
+      }
+    ]
+  }

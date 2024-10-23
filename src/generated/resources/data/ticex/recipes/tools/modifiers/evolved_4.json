@@ -1,0 +1,28 @@
+{
+  "type": "tconstruct:modifier",
+  "inputs": [
+    { "item": "draconicevolution:wyvern_core" ,"amount_needed": 2},
+    { "item": "draconicevolution:awakened_core" ,"amount_needed": 2},
+    { "item": "draconicevolution:chaotic_core" },
+    { "item": "minecraft:dragon_egg","amount_needed": 2},
+    { "item": "draconicevolution:module_core" }
+  ],
+  "tools": [
+    { "tag": "tconstruct:modifiable/melee" },
+    { "tag": "tconstruct:modifiable/harvest" }
+  ],
+  "requirements": {
+    "name": "ticex:evolved",
+    "level": 3,
+    "error": "recipe.ticex.modifier.evolved_requirements_4"
+  },
+  "slots": {
+    "abilities": 1
+  },
+  "allow_crystal": true,
+  "result": {
+    "name": "ticex:evolved",
+    "level": 1
+  },
+  "max_level": 4
+}

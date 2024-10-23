@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "ticex:item/slashblade_saya_red_sand_cast"
+    }
+  }

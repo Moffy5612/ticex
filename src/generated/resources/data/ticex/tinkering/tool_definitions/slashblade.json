@@ -1,0 +1,30 @@
+{
+    "parts": [
+      {
+        "item": "ticex:slashblade_blade"
+      },
+      {
+        "item": "tconstruct:tough_handle"
+      },
+      {
+        "item": "ticex:slashblade_saya"
+      }
+    ],
+    "stats": {
+      "base": {},
+      "multipliers": {
+        "tconstruct:attack_damage": 1.0,
+        "tconstruct:attack_speed": 1.0,
+        "tconstruct:mining_speed": 0.5,
+        "tconstruct:durability": 1.5
+      }
+    },
+    "slots": {
+      "upgrades": 1,
+      "abilities": 3
+    },
+    "actions": [
+      "pickaxe_dig",
+      "shears_disarm"
+    ]
+  }

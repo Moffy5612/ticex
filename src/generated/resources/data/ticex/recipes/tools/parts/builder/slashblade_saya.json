@@ -1,0 +1,16 @@
+{
+    "type": "tconstruct:part_builder",
+    "pattern": "ticex:slashblade_saya",
+    "pattern_item": [
+      {
+        "tag": "tconstruct:patterns/default"
+      },
+      {
+        "item": "ticex:slashblade_saya_cast"
+      }
+    ],
+    "cost": 2,
+    "result": {
+      "item": "ticex:slashblade_saya"
+    }
+  }

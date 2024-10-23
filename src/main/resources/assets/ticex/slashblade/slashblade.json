@@ -1,0 +1,8 @@
+{
+    "model":"ticex:assets/slashblade",
+    "textures":{
+        "blade":"ticex:assets/blade",
+        "handle":"ticex:assets/handle",
+        "saya":"ticex:assets/saya"
+    }
+}
