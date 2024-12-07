@@ -3,13 +3,10 @@ package com.moffy5612.ticex;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.moffy5612.ticex.events.handlers.SlashBladeModelBakeEventHandler;
 import com.moffy5612.ticex.handlers.draconicevolution.TicEXDEHandler;
 import com.moffy5612.ticex.handlers.slashblade.TicEXSlashBladeHandler;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.client.event.ModelBakeEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.network.NetworkRegistry;
@@ -36,12 +33,5 @@ public class TicEX {
 
         DE_HANDLER.Handle();
         SLASH_BLADE_HANDLER.Handle();
-    }
-
-    @SubscribeEvent
-    public static void onModelBake(ModelBakeEvent event){
-        if(SLASH_BLADE_HANDLER.isModsLoaded()){
-            SlashBladeModelBakeEventHandler.onModelBake(event);
-        }
     }
 }
