@@ -34,5 +34,4 @@ public class TicEXSlashBladeHandler extends ContentHandlerBase{
     public String[] getRequiredModIds() {
         return new String[]{"tconstruct", "slashblade"};
     }
-    
 }
