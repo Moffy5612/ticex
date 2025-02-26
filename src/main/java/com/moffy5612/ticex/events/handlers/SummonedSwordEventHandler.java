@@ -1,6 +1,7 @@
 package com.moffy5612.ticex.events.handlers;
 
-import java.util.*;
+import java.util.EnumSet;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import com.moffy5612.ticex.entities.TicEXSlashBladeAbstructSummonedSword;
@@ -61,8 +62,8 @@ public class SummonedSwordEventHandler {
                                         Entity target = ((EntityHitResult) r).getEntity();
 
                                         boolean isMatch = true;
-                                        if(target instanceof LivingEntity)
-                                            isMatch = TargetSelector.lockon_focus.test(sender, (LivingEntity)target);
+                                        if(target instanceof LivingEntity livingEntity)
+                                            isMatch = TargetSelector.lockon_focus.test(sender, livingEntity);
 
                                         return isMatch;
                                     }).map(r->((EntityHitResult) r).getEntity()))

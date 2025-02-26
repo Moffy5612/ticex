@@ -1,11 +1,11 @@
 {
   "type": "tconstruct:modifier",
   "inputs": [
-    { "item": "draconicevolution:wyvern_core" ,"amount_needed": 2},
-    { "item": "draconicevolution:awakened_core" },
-    { "item": "minecraft:nether_star" ,"amount_needed": 2},
-    { "tag":"forge:storage_blocks/netherite" ,"amount_needed": 2},
-    { "item": "draconicevolution:module_core" }
+    {
+      "type": "forge:nbt",
+      "item": "ticex:reconstruction_core",
+      "nbt": "{Type: \"modifier.ticex.evolved3\"}"
+    }
   ],
   "tools": [
     { "tag": "tconstruct:modifiable/melee" },

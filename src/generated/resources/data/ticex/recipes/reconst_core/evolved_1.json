@@ -1,0 +1,23 @@
+{
+    "type": "draconicevolution:fusion_crafting",
+    "result": {
+        "type": "forge:nbt",
+        "item": "ticex:reconstruction_core",
+        "nbt": "{Type: \"modifier.ticex.evolved1\"}"
+    },
+    "catalyst": {
+        "item": "ticex:reconstruction_core"
+    },
+    "total_energy": 32000,
+    "tier": "DRACONIUM",
+    "ingredients": [
+        { "item": "draconicevolution:draconium_core" },
+        { "item": "minecraft:golden_apple"},
+        { "item": "minecraft:ender_eye"},
+        { "tag": "forge:gems/diamond"},
+        { "item": "minecraft:golden_apple"},
+        { "item": "minecraft:ender_eye"},
+        { "tag": "forge:gems/diamond"},
+        { "item": "draconicevolution:module_core" }
+    ]
+  }

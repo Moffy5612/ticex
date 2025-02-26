@@ -1,14 +1,30 @@
 {
     "item.ticex.reconstruction_core": "Reconstruction Core",
+    "item.ticex.reconstruction_core.desc": "Modifiering Ingredients",
+
 
     "item.ticex.slashblade_blade": "Blade",
     "item.ticex.slashblade_saya": "Saya",
     "item.ticex.slashblade": "SlashBlade",
     "item.ticex.sheath": "Sheath",
 
+    "item.ticex.slashblade_blade_cast":"Blade Gold Cast",
+    "item.ticex.slashblade_blade_sand_cast":"Blade Sand Cast",
+    "item.ticex.slashblade_blade_red_sand_cast":"Blade Red Sand Cast",
+    "item.ticex.slashblade_saya_cast":"Saya Gold Cast",
+    "item.ticex.slashblade_saya_sand_cast":"Saya Sand Cast",
+    "item.ticex.slashblade_saya_red_sand_cast":"Saya Red Sand Cast",
+
     "modifier.ticex.evolved": "Evolved",
     "modifier.ticex.evolved.flavor": "§7§o―A man who dares to waste one hour of time has not discovered the value of life.",
     "modifier.ticex.evolved.description": "Tools become able to customize with DE modules",
+    "modifier.ticex.evolved1": "Evolved I",
+    "modifier.ticex.evolved2": "Evolved II",
+
+    "modifier.ticex.katarize": "Katarize",
+    "modifier.ticex.katarize.flavor": "If no one finds out, it's not a crime.",
+    "modifier.ticex.katarize.description": "The tool behaves like red katar.",
+    "modifier.ticex.katarize.charge": "Katar Charge",
 
     "recipe.ticex.modifier.evolved_requirements_1": "Evolved I requires Netherite and Reinforced V to apply",
     "recipe.ticex.modifier.evolved_requirements_2": "Evolved II requires Evolved I to apply",

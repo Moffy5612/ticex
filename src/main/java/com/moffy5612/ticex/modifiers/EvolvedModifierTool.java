@@ -109,18 +109,16 @@ public class EvolvedModifierTool extends Modifier{
         Player player = context.getPlayerAttacker();
         if(player != null){
             Entity target = context.getTarget();
-            if(target != null) {
-                ItemStack stack = player.getItemInHand(context.getHand());
-                ModuleHost host = stack.getCapability(DECapabilities.MODULE_HOST_CAPABILITY).orElseThrow(IllegalStateException::new);
-                IOPStorage opStorage = stack.getCapability(DECapabilities.OP_STORAGE).orElseThrow(IllegalStateException::new);
-                int attackDamage = getDamageBonus(host, opStorage);
-                int extracted = opStorage.extractEnergy(tool.getStats().getInt(ToolStats.ATTACK_DAMAGE) + attackDamage, false);
-                hurt(player, target, stack, Math.min(extracted, attackDamage));
-                double aoe = getAttackAoe(host);
-                if (aoe > 0 && target instanceof LivingEntity) {
-                    dealAOEDamage(player, (LivingEntity)target, stack, Math.min(extracted, attackDamage) * 0.8F, aoe);
-                }
-            } 
+            ItemStack stack = player.getItemInHand(context.getHand());
+            ModuleHost host = stack.getCapability(DECapabilities.MODULE_HOST_CAPABILITY).orElseThrow(IllegalStateException::new);
+            IOPStorage opStorage = stack.getCapability(DECapabilities.OP_STORAGE).orElseThrow(IllegalStateException::new);
+            int attackDamage = getDamageBonus(host, opStorage);
+            int extracted = opStorage.extractEnergy(tool.getStats().getInt(ToolStats.ATTACK_DAMAGE) + attackDamage, false);
+            hurt(player, target, stack, Math.min(extracted, attackDamage));
+            double aoe = getAttackAoe(host);
+            if (aoe > 0 && target instanceof LivingEntity) {
+                dealAOEDamage(player, (LivingEntity)target, stack, Math.min(extracted, attackDamage) * 0.8F, aoe);
+            }
         }
         return 0f;
     }
@@ -138,12 +136,12 @@ public class EvolvedModifierTool extends Modifier{
 
             int aoe = host.getModuleData(ModuleTypes.AOE, new AOEData(0)).aoe();
             boolean aoeSafe = true;
-            if (host instanceof PropertyProvider) {
-                if (((PropertyProvider) host).hasInt("mining_aoe")) {
-                    aoe = ((PropertyProvider) host).getInt("mining_aoe").getValue();
+            if (host instanceof PropertyProvider propertyProvider) {
+                if (propertyProvider.hasInt("mining_aoe")) {
+                    aoe = propertyProvider.getInt("mining_aoe").getValue();
                 }
-                if (((PropertyProvider) host).hasBool("aoe_safe")) {
-                    aoeSafe = ((PropertyProvider) host).getBool("aoe_safe").getValue();
+                if (propertyProvider.hasBool("aoe_safe")) {
+                    aoeSafe = propertyProvider.getBool("aoe_safe").getValue();
                 }
             }
             
@@ -215,7 +213,7 @@ public class EvolvedModifierTool extends Modifier{
     }
 
     private boolean hurt(Player player, Entity target, ItemStack stack, int damage){
-        boolean result = false;
+        boolean result;
         ModuleHost host = stack.getCapability(DECapabilities.MODULE_HOST_CAPABILITY).orElseThrow(IllegalStateException::new);
         IOPStorage opStorage = stack.getCapability(DECapabilities.OP_STORAGE).orElseThrow(IllegalStateException::new);
 
@@ -277,7 +275,7 @@ public class EvolvedModifierTool extends Modifier{
         return stack.isCorrectToolForDrops(state);
     }
 
-    private  Pair<BlockPos, BlockPos> getMiningArea(BlockPos pos, Direction direction, Player player, int breakRadius, int breakDepth) {
+    private  Pair<BlockPos, BlockPos> getMiningArea(BlockPos pos, Direction direction, @SuppressWarnings("unused") Player player, int breakRadius, int breakDepth) {
 
         int sideHit = direction.get3DDataValue();
 
@@ -347,7 +345,7 @@ public class EvolvedModifierTool extends Modifier{
         }
     }
 
-    private void breakAOEBlock(ItemStack stack, Level world, BlockPos pos, Player player, float refStrength, InventoryDynamic inventory, boolean breakFX, ToolHarvestContext context) {
+    private void breakAOEBlock(ItemStack stack, Level world, BlockPos pos, Player player, @SuppressWarnings("unused") float refStrength, InventoryDynamic inventory, @SuppressWarnings("unused") boolean breakFX, ToolHarvestContext context) {
         if (world.isEmptyBlock(pos)) {
             return;
         }
@@ -376,7 +374,7 @@ public class EvolvedModifierTool extends Modifier{
 
     private class PlayerDraconicDamage extends EntityDamageSource implements IDraconicDamage{
 
-        private TechLevel techLevel;
+        private final TechLevel techLevel;
 
         public PlayerDraconicDamage(Entity entity, TechLevel techLevel) {
             super("player", entity);

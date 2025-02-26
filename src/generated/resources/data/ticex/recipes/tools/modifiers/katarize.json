@@ -1,0 +1,23 @@
+{
+    "type": "tconstruct:modifier",
+    "level_display": "tconstruct:no_levels",
+    "inputs": [
+      { "item": "projecte:rm_katar" },
+      { "item": "ticex:reconstruction_core" ,"amount_needed": 64},
+      { "item": "tconstruct:tool_binding"},
+      { "item": "minecraft:nether_star" }
+    ],
+    "tools": [
+      { "tag": "tconstruct:modifiable/melee" },
+      { "tag": "tconstruct:modifiable/harvest" }
+    ],
+    "slots": {
+      "abilities": 1
+    },
+    "allow_crystal": true,
+    "result": {
+      "name": "ticex:katarize",
+      "level": 1
+    },
+    "max_level": 1
+  }

@@ -1,11 +1,11 @@
 {
   "type": "tconstruct:modifier",
   "inputs": [
-    { "item": "draconicevolution:draconium_core" },
-    { "item": "minecraft:golden_apple" ,"amount_needed": 2},
-    { "item": "minecraft:ender_eye" ,"amount_needed": 2},
-    { "tag": "forge:gems/diamond" ,"amount_needed": 2},
-    { "item": "draconicevolution:module_core" }
+    {
+        "type": "forge:nbt",
+        "item": "ticex:reconstruction_core",
+        "nbt": "{Type: \"modifier.ticex.evolved1\"}"
+    }
   ],
   "tools": [
     { "tag": "tconstruct:modifiable/melee" },

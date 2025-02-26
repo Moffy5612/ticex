@@ -1,0 +1,23 @@
+{
+    "type": "draconicevolution:fusion_crafting",
+    "result": {
+        "type": "forge:nbt",
+        "item": "ticex:reconstruction_core",
+        "nbt": "{Type: \"modifier.ticex.evolved3\"}"
+    },
+    "catalyst": {
+        "item": "ticex:reconstruction_core"
+    },
+    "total_energy": 32000000,
+    "tier": "DRACONIC",
+    "ingredients": [
+        { "item": "draconicevolution:wyvern_core"},
+        { "item": "draconicevolution:awakened_core" },
+        { "item": "minecraft:nether_star"},
+        { "tag":"forge:storage_blocks/netherite"},
+        { "item": "draconicevolution:awakened_core" },
+        { "item": "minecraft:nether_star"},
+        { "tag":"forge:storage_blocks/netherite"},
+        { "item": "draconicevolution:module_core" }
+    ]
+  }

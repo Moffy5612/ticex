@@ -20,8 +20,10 @@
       }
     },
     "result": {
-      "item": "ticex:reconstruction_core",
-      "count": 1
+        "type": "forge:nbt",
+        "item": "ticex:reconstruction_core",
+        "count":1,
+        "nbt": "{Type: \"item.ticex.reconstruction_core.desc\"}"
     }
   }
   

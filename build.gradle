@@ -222,6 +222,9 @@ dependencies {
 
     implementation fg.deobf("com.projecte:ProjectE-1.18.2:PE1.0.2")
 
+    implementation fg.deobf("com.autoreglib:AutoRegLib:1.7-53")
+    implementation fg.deobf("com.morphotool:Morph-o-Tool:1.5-32")
+
     runtimeOnly fg.deobf("com.jei:jei-1.18.2-forge:10.2.1.1005")
     runtimeOnly fg.deobf("com.embeddium:embeddium:0.3.18+mc1.18.2")
     runtimeOnly fg.deobf("com.lazydfu:lazydfu:1.0-1.18+")

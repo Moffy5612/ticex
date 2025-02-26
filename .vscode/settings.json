@@ -3,5 +3,7 @@
     "jdk.project.jdkhome": "Z:\\Program Files\\Java\\jdk-17",
     "jdk.runConfig.vmOptions": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx8G -Xms4G -Xlog:disable",
     "jdk.advanced.disable.projectSearchLimit": true,
-    "jdk.advanced.disable.nbjavac": false
+    "jdk.advanced.disable.nbjavac": false,
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m -Xlog:disable",
+    "java.compile.nullAnalysis.mode": "disabled"
 }

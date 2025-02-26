@@ -1,11 +1,11 @@
 {
   "type": "tconstruct:modifier",
   "inputs": [
-    { "item": "draconicevolution:wyvern_core" ,"amount_needed": 2},
-    { "item": "draconicevolution:awakened_core" ,"amount_needed": 2},
-    { "item": "draconicevolution:chaotic_core" },
-    { "item": "minecraft:dragon_egg","amount_needed": 2},
-    { "item": "draconicevolution:module_core" }
+    {
+      "type": "forge:nbt",
+      "item": "ticex:reconstruction_core",
+      "nbt": "{Type: \"modifier.ticex.evolved4\"}"
+    }
   ],
   "tools": [
     { "tag": "tconstruct:modifiable/melee" },
