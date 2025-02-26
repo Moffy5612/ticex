@@ -1,6 +1,6 @@
 package com.moffy5612.ticex.events.handlers;
 
-import com.moffy5612.ticex.Reference;
+import com.moffy5612.ticex.TicEXReference;
 import com.moffy5612.ticex.TicEX;
 import com.moffy5612.ticex.handlers.slashblade.TicEXSlashBladeItems;
 
@@ -12,7 +12,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 
-@Mod.EventBusSubscriber(modid = Reference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = TicEXReference.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class SlashBladeModelBakeEventHandler {
 
     @SubscribeEvent

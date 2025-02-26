@@ -3,7 +3,6 @@ package com.moffy5612.ticex.caps.evolved;
 import com.brandon3055.brandonscore.api.power.OPStorage;
 import com.brandon3055.draconicevolution.api.modules.lib.ModularOPStorage;
 import com.brandon3055.draconicevolution.init.EquipCfg;
-import com.moffy5612.ticex.handlers.TicEXModuleProvider;
 import com.moffy5612.ticex.modifiers.EvolvedModifierTool;
 import com.moffy5612.ticex.utils.TicEXUtils;
 
@@ -65,10 +64,6 @@ public class EvolvedOPStorage extends ModularOPStorage{
 
     private void writeToPersistentData(){
         tool.getPersistentData().put(EvolvedModifierTool.OP_STORAGE_LOCATION, serializeNBT());
-        EvolvedModifierTool modifier = (EvolvedModifierTool)TicEXUtils.getModifier(tool.getModifiers(), TicEXModuleProvider.MODIFIER_EVOLVED.get());
-        if(modifier != null){
-            modifier.setEnergy(tool, this);
-        }
     }
 
     private void readFromPersistentData(){

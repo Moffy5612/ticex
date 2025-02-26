@@ -1,6 +1,7 @@
 package com.moffy5612.ticex.modifiers;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -9,6 +10,7 @@ import com.brandon3055.brandonscore.api.TechLevel;
 import com.brandon3055.brandonscore.api.power.IOPStorage;
 import com.brandon3055.brandonscore.inventory.InventoryDynamic;
 import com.brandon3055.brandonscore.lib.Pair;
+import com.brandon3055.brandonscore.utils.EnergyUtils;
 import com.brandon3055.draconicevolution.api.capability.DECapabilities;
 import com.brandon3055.draconicevolution.api.capability.ModuleHost;
 import com.brandon3055.draconicevolution.api.capability.PropertyProvider;
@@ -18,18 +20,20 @@ import com.brandon3055.draconicevolution.api.modules.ModuleTypes;
 import com.brandon3055.draconicevolution.api.modules.data.AOEData;
 import com.brandon3055.draconicevolution.api.modules.data.DamageData;
 import com.brandon3055.draconicevolution.init.EquipCfg;
-import com.moffy5612.ticex.Reference;
 import com.moffy5612.ticex.TicEXConfig;
+import com.moffy5612.ticex.TicEXReference;
 import com.moffy5612.ticex.integration.materialis.MaterialisModifierUtils;
 import com.moffy5612.ticex.utils.TicEXDEUtils;
-import com.moffy5612.ticex.utils.TicEXUtils;
 
 import codechicken.lib.inventory.InventoryUtils;
 import codechicken.lib.math.MathHelper;
+import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
 import net.minecraft.resources.ResourceLocation;
@@ -43,28 +47,31 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.fml.ModList;
-import slimeknights.tconstruct.library.modifiers.impl.DurabilityShieldModifier;
+import slimeknights.mantle.client.TooltipKey;
+import slimeknights.tconstruct.library.modifiers.Modifier;
 import slimeknights.tconstruct.library.tools.context.ToolAttackContext;
 import slimeknights.tconstruct.library.tools.context.ToolHarvestContext;
 import slimeknights.tconstruct.library.tools.helper.ToolHarvestLogic;
-
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.nbt.ToolStack;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 
-public class EvolvedModifierTool extends DurabilityShieldModifier{
+public class EvolvedModifierTool extends Modifier{
 
     Random rand = new Random();
 
-    public static final ResourceLocation MODULE_HOST_LOCATION = new ResourceLocation(Reference.MOD_ID, "module_host");
-    public static final ResourceLocation OP_STORAGE_LOCATION = new ResourceLocation(Reference.MOD_ID, "op_storage");
+    public static final ResourceLocation MODULE_HOST_LOCATION = new ResourceLocation(TicEXReference.MOD_ID, "module_host");
+    public static final ResourceLocation OP_STORAGE_LOCATION = new ResourceLocation(TicEXReference.MOD_ID, "op_storage");
+    
+    public static final String STORED_OP_KEY = "tooltip.ticex.stored_op";
 
     @Override
     public int getPriority() {
@@ -72,40 +79,30 @@ public class EvolvedModifierTool extends DurabilityShieldModifier{
     }
 
     @Override
-    public int onDamageTool(@SuppressWarnings("null") IToolStackView tool, int level, int amount, @Nullable LivingEntity holder) {
+    public int onDamageTool(IToolStackView tool, int level, int amount, @Nullable LivingEntity holder) {
         return 0;
     }
 
-    @SuppressWarnings("null")
     @Override
-    @Nullable
-    public Boolean showDurabilityBar(IToolStackView tool, int level) {
-        return getShield(tool) > 0;
+    public void addInformation(IToolStackView tool, int level, Player player, List<Component> tooltip,
+    		TooltipKey tooltipKey, TooltipFlag tooltipFlag) {
+    	super.addInformation(tool, level, player, tooltip, tooltipKey, tooltipFlag);
+    	
+    	ItemStack stack = getTool(player);
+    	
+    	if (!Screen.hasShiftDown()) {
+            tooltip.add(new TranslatableComponent("[Modular Item]").withStyle(ChatFormatting.BLUE));
+        }
+    	
+    	ModuleHost host = stack.getCapability(DECapabilities.MODULE_HOST_CAPABILITY).orElse(null);
+        if (host != null) {
+            host.getModuleEntities().forEach(e -> e.addHostHoverText(stack, player.getLevel(), tooltip, tooltipFlag));
+            host.getInstalledTypes().map(host::getModuleData).filter(Objects::nonNull).forEach(data -> data.addHostHoverText(stack, player.getLevel(), tooltip, tooltipFlag));
+        }
+    	
+        EnergyUtils.addEnergyInfo(stack, tooltip);
     }
 
-    @SuppressWarnings("null")
-    @Override
-    public int getDurabilityRGB(IToolStackView tool, int level) {
-        return 0x9e1010;
-    }
-
-    @SuppressWarnings("null")
-    @Override
-    protected int getShieldCapacity(IToolStackView tool, int level) {
-        int capacity = tool.getPersistentData().getCompound(OP_STORAGE_LOCATION).getInt("capacity");
-        return capacity;
-    }
-
-    public void setEnergy(IToolStackView tool, IOPStorage opStorage){
-        setShield(tool.getPersistentData(), TicEXUtils.longToIntWithPercentage(opStorage.getOPStored()));
-    };
-
-    @Override
-    protected ResourceLocation getShieldKey() {
-        return getId();
-    }
-
-    @SuppressWarnings("null")
     @Override
     public float beforeEntityHit(IToolStackView tool, int level, ToolAttackContext context, float damage,
             float baseKnockback, float knockback) {

@@ -2,7 +2,7 @@ package com.moffy5612.ticex.handlers.slashblade;
 
 import java.util.function.*;
 
-import com.moffy5612.ticex.Reference;
+import com.moffy5612.ticex.TicEXReference;
 import com.moffy5612.ticex.items.ToolSlashBlade;
 
 import mods.flammpfeil.slashblade.item.ItemTierSlashBlade;
@@ -28,10 +28,10 @@ public final class TicEXSlashBladeItems{
         TagKey<Item> tags = ItemTags.create(new ResourceLocation("slashblade","proudsouls"));
         return Ingredient.of(tags);
     });
-    private static final ToolDefinition SLASHBLADE_DEFINITION = ToolDefinition.builder(new ResourceLocation(Reference.MOD_ID, "slashblade")).meleeHarvest().build();
+    private static final ToolDefinition SLASHBLADE_DEFINITION = ToolDefinition.builder(new ResourceLocation(TicEXReference.MOD_ID, "slashblade")).meleeHarvest().build();
 
-    public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(Reference.MOD_ID);
-    public static final ItemDeferredRegisterExtension ITEMS_EXTENDED = new ItemDeferredRegisterExtension(Reference.MOD_ID);
+    public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(TicEXReference.MOD_ID);
+    public static final ItemDeferredRegisterExtension ITEMS_EXTENDED = new ItemDeferredRegisterExtension(TicEXReference.MOD_ID);
     
     private static final Item.Properties SMELTERY_PROPS = new Item.Properties().tab(TinkerSmeltery.TAB_SMELTERY);
 

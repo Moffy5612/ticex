@@ -7,7 +7,7 @@ import com.moffy5612.ticex.modifiers.EvolvedModifierTool;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import slimeknights.tconstruct.library.tools.capability.ToolCapabilityProvider;
 
-public class TicExDESetup {
+public class TicEXDESetup {
     public static void run(FMLCommonSetupEvent event) {
         ToolCapabilityProvider.register(ToolEvolvedCapProvider::new);
         

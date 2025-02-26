@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import com.moffy5612.ticex.Reference;
+import com.moffy5612.ticex.TicEXReference;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -88,7 +88,7 @@ public class TicEXRecipeProvider extends RecipeProvider implements IConditionBui
 
     @Override
     public String getModId() {
-        return Reference.MOD_ID;
+        return TicEXReference.MOD_ID;
     }
 
     @Override

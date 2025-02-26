@@ -9,7 +9,7 @@
         "item": "ticex:slashblade_blade_cast"
       }
     ],
-    "cost": 2,
+    "cost": 4,
     "result": {
       "item": "ticex:slashblade_blade"
     }

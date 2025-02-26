@@ -1,5 +1,7 @@
 {
-    "java.compile.nullAnalysis.mode": "automatic",
-    "java.configuration.updateBuildConfiguration": "interactive",
-    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -Xlog:disable"
+    "kubejs.debug.java.home": "Z:\\Program Files\\Java\\jdk-17",
+    "jdk.project.jdkhome": "Z:\\Program Files\\Java\\jdk-17",
+    "jdk.runConfig.vmOptions": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx8G -Xms4G -Xlog:disable",
+    "jdk.advanced.disable.projectSearchLimit": true,
+    "jdk.advanced.disable.nbjavac": false
 }

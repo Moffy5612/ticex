@@ -7,7 +7,7 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import com.moffy5612.ticex.Reference;
+import com.moffy5612.ticex.TicEXReference;
 import com.moffy5612.ticex.client.renderer.TicEXSlashBladeISTER;
 import com.moffy5612.ticex.integration.materialis.MaterialisModifierUtils;
 import com.moffy5612.ticex.utils.TicEXUtils;
@@ -167,6 +167,9 @@ public class ToolSlashBlade extends ItemSlashBlade implements IModifiableDisplay
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity,
             java.util.function.Consumer<T> onBroken) {
         ToolDamageUtil.handleDamageItem(stack, super.damageItem(stack, amount, entity, onBroken), entity, onBroken);
+        stack.getCapability(BLADESTATE).ifPresent((state)->{
+            state.setBroken(ToolDamageUtil.isBroken(stack));
+        });
         return 0;
     }
 
@@ -515,6 +518,6 @@ public class ToolSlashBlade extends ItemSlashBlade implements IModifiableDisplay
    }
 
    public ResourceLocation getDefaultModelsLocation(){
-        return new ResourceLocation(Reference.MOD_ID, "slashblade");
+        return new ResourceLocation(TicEXReference.MOD_ID, "slashblade");
    }
 }

@@ -1,10 +1,15 @@
 {
+    "item.ticex.reconstruction_core": "Reconstruction Core",
+
     "item.ticex.slashblade_blade": "Blade",
     "item.ticex.slashblade_saya": "Saya",
     "item.ticex.slashblade": "SlashBlade",
+    "item.ticex.sheath": "Sheath",
+
     "modifier.ticex.evolved": "Evolved",
     "modifier.ticex.evolved.flavor": "§7§o―A man who dares to waste one hour of time has not discovered the value of life.",
     "modifier.ticex.evolved.description": "Tools become able to customize with DE modules",
+
     "recipe.ticex.modifier.evolved_requirements_1": "Evolved I requires Netherite and Reinforced V to apply",
     "recipe.ticex.modifier.evolved_requirements_2": "Evolved II requires Evolved I to apply",
     "recipe.ticex.modifier.evolved_requirements_3": "Evolved III requires Evolved II to apply",

@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "CDC",
+      "ABA",
+      "CDC"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:blaze_powder"
+      },
+      "B": {
+        "item": "tconstruct:sky_slime_ball"
+      },
+      "C": {
+        "tag": "forge:gems/amethyst"
+      },
+      "D": {
+        "item": "minecraft:shulker_shell"
+      }
+    },
+    "result": {
+      "item": "ticex:reconstruction_core",
+      "count": 1
+    }
+  }
+  
