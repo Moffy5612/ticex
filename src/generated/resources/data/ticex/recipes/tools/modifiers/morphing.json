@@ -2,14 +2,12 @@
     "type": "tconstruct:modifier",
     "level_display": "tconstruct:no_levels",
     "inputs": [
-      { "item": "projecte:rm_katar" },
+      { "item": "morphtool:tool" },
       {
-          "type": "forge:nbt",
-          "item": "ticex:reconstruction_core",
-          "nbt": "{Type: \"modifier.ticex.katarize\"}"
+        "item": "ticex:reconstruction_core"
       },
       { "item": "tconstruct:tool_binding"},
-      { "item": "minecraft:nether_star" }
+      { "tag": "forge:ingots/cobalt"}
     ],
     "tools": [
       { "tag": "tconstruct:modifiable/melee" },
@@ -20,7 +18,7 @@
     },
     "allow_crystal": true,
     "result": {
-      "name": "ticex:katarize",
+      "name": "ticex:morphing",
       "level": 1
     },
     "max_level": 1

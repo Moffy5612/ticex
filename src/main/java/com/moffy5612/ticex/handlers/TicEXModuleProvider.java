@@ -12,6 +12,7 @@ public class TicEXModuleProvider extends AbstractModifierProvider{
     public static final ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(TicEXReference.MOD_ID);
         public static StaticModifier<Modifier> MODIFIER_EVOLVED = null;
         public static StaticModifier<Modifier> MODIFIER_KATARIZE = null;
+        public static StaticModifier<Modifier> MODIFIER_MORPHING = null;
 
         public TicEXModuleProvider(DataGenerator generator) {
             super(generator);

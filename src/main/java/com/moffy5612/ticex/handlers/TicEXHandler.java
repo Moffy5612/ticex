@@ -27,7 +27,7 @@ public class TicEXHandler extends ContentHandlerBase{
 
     @Override
     public String[] getRequiredModIds() {
-        return new String[]{};
+        return new String[]{"tconstruct"};
     }
     
 }

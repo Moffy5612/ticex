@@ -20,11 +20,17 @@
     "modifier.ticex.evolved.description": "Tools become able to customize with DE modules",
     "modifier.ticex.evolved1": "Evolved I",
     "modifier.ticex.evolved2": "Evolved II",
+    "modifier.ticex.evolved3": "Evolved III",
+    "modifier.ticex.evolved4": "Evolved IV",
 
     "modifier.ticex.katarize": "Katarize",
     "modifier.ticex.katarize.flavor": "If no one finds out, it's not a crime.",
     "modifier.ticex.katarize.description": "The tool behaves like red katar.",
     "modifier.ticex.katarize.charge": "Katar Charge",
+    "modifier.ticex.katarize00625": "Katarize 6.25%",
+    "modifier.ticex.katarize025": "Katarize 25%",
+
+    "modifier.ticex.morphing": "Morphing",
 
     "recipe.ticex.modifier.evolved_requirements_1": "Evolved I requires Netherite and Reinforced V to apply",
     "recipe.ticex.modifier.evolved_requirements_2": "Evolved II requires Evolved I to apply",

@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+      {
+        "item": "projecte:philosophers_stone"
+      },
+      {
+        "item": "ticex:reconstruction_core"
+      },
+      {
+        "item": "ticex:reconstruction_core"
+      },
+      {
+        "item": "ticex:reconstruction_core"
+      },
+      {
+        "item": "ticex:reconstruction_core"
+      }
+    ],
+    "result": {
+        "type": "forge:nbt",
+        "item": "ticex:reconstruction_core",
+        "nbt": "{Type: \"modifier.ticex.katarize00625\"}"
+    }
+  }
