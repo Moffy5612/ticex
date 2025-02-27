@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.moffy5612.ticex.handlers.TicEXHandler;
 import com.moffy5612.ticex.handlers.draconicevolution.TicEXDEHandler;
+import com.moffy5612.ticex.handlers.mekanism.TicEXMekanismHandler;
 import com.moffy5612.ticex.handlers.projecte.TicEXProjectEHandler;
 import com.moffy5612.ticex.handlers.slashblade.TicEXSlashBladeHandler;
 
@@ -31,6 +32,7 @@ public class TicEX {
     public static final TicEXDEHandler DE_HANDLER = new TicEXDEHandler();
     public static final TicEXSlashBladeHandler SLASH_BLADE_HANDLER = new TicEXSlashBladeHandler();
     public static final TicEXProjectEHandler PROJECT_E_HANDLER = new TicEXProjectEHandler();
+    public static final TicEXMekanismHandler MEKANISM_HANDLER = new TicEXMekanismHandler();
 
     public TicEX () {
         TicEXConfig.register();
@@ -39,5 +41,6 @@ public class TicEX {
         DE_HANDLER.Handle();
         SLASH_BLADE_HANDLER.Handle();
         PROJECT_E_HANDLER.Handle();
+        MEKANISM_HANDLER.Handle();
     }
 }

@@ -29,8 +29,6 @@ public final class TicEXSlashBladeItems{
         return Ingredient.of(tags);
     });
     private static final ToolDefinition SLASHBLADE_DEFINITION = ToolDefinition.builder(new ResourceLocation(TicEXReference.MOD_ID, "slashblade")).meleeHarvest().build();
-
-    public static final ItemDeferredRegister ITEMS = new ItemDeferredRegister(TicEXReference.MOD_ID);
     public static final ItemDeferredRegisterExtension ITEMS_EXTENDED = new ItemDeferredRegisterExtension(TicEXReference.MOD_ID);
     
     private static final Item.Properties SMELTERY_PROPS = new Item.Properties().tab(TinkerSmeltery.TAB_SMELTERY);
@@ -42,6 +40,4 @@ public final class TicEXSlashBladeItems{
     public static final ItemObject<ToolSlashBlade> SLASHBLADE = ITEMS_EXTENDED.register("slashblade", () -> new ToolSlashBlade(TIER, 0, -2.4f, TOOL_PROPS.get(), SLASHBLADE_DEFINITION));
     public static final CastItemObject BLADE_CAST = ITEMS_EXTENDED.registerCast("slashblade_blade", SMELTERY_PROPS);
     public static final CastItemObject SAYA_CAST = ITEMS_EXTENDED.registerCast("slashblade_saya", SMELTERY_PROPS);
-
-    public static final ItemObject<Item> SHEATH = ITEMS.register("sheath", new Item.Properties().stacksTo(1));
 }

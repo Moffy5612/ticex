@@ -1,6 +1,8 @@
 {
 	"modifier.ticex": {
         "evolved": "#8a0404",
-        "katarize": "#eb4034"
+        "katarize": "#eb4034",
+        "radiation_shield": "#328da8",
+        "koshirae": "#754d3d"
     }
 }

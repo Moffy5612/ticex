@@ -30,7 +30,11 @@
     "modifier.ticex.katarize00625": "Katarize 6.25%",
     "modifier.ticex.katarize025": "Katarize 25%",
 
-    "modifier.ticex.morphing": "Morphing",
+    "modifier.ticex.radiation_shield": "Radiation Shield",
+    "modifier.ticex.radiation_shield.flavor": "The final battle at the place where stars fall",
+    "modifier.ticex.radiation_shield.description": "Armor protects against radiation",
+
+    "modifier.ticex.koshirae": "Koshirae",
 
     "recipe.ticex.modifier.evolved_requirements_1": "Evolved I requires Netherite and Reinforced V to apply",
     "recipe.ticex.modifier.evolved_requirements_2": "Evolved II requires Evolved I to apply",

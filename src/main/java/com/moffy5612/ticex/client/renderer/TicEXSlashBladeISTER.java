@@ -132,13 +132,14 @@ public class TicEXSlashBladeISTER extends BlockEntityWithoutLevelRenderer{
         ISlashBladeState state = stack.getCapability(BladeStateCapabilityProvider.CAP).orElseThrow(IllegalStateException::new);
 
         String renderTarget;
-        if(types.contains(SwordType.Broken))
+        if(types.contains(SwordType.Broken)){
             renderTarget = "item_damaged";
-        else if(!types.contains(SwordType.NoScabbard)){
+        }else if(!types.contains(SwordType.NoScabbard)){
             renderTarget = "item_blade";
         }else{
             renderTarget = "item_bladens";
         }
+        
         if(state.getModel().isPresent() && state.getTexture().isPresent()){
             WavefrontObject obj = BladeModelManager.getInstance().getModel(state.getModel().get());
             ResourceLocation texture = state.getTexture().get();

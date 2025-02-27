@@ -5,14 +5,18 @@ import java.util.function.Consumer;
 
 import javax.annotation.Nullable;
 
+import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import com.moffy5612.ticex.TicEXReference;
 import com.moffy5612.ticex.client.renderer.TicEXSlashBladeISTER;
+import com.moffy5612.ticex.handlers.TicEXModuleProvider;
 import com.moffy5612.ticex.integration.materialis.MaterialisModifierUtils;
+import com.moffy5612.ticex.modifiers.KoshiraeModifier;
 import com.moffy5612.ticex.utils.TicEXUtils;
 
 import mods.flammpfeil.slashblade.SlashBlade;
+import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
 import mods.flammpfeil.slashblade.entity.BladeItemEntity;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -32,6 +36,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot.Type;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -42,8 +48,10 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.IItemRenderProperties;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.ToolAction;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.fml.ModList;
 import slimeknights.mantle.client.SafeClientAccess;
 import slimeknights.tconstruct.common.TinkerTags.Items;
@@ -76,6 +84,7 @@ import slimeknights.tconstruct.library.utils.Util;
 import slimeknights.tconstruct.tools.TinkerToolActions;
 public class ToolSlashBlade extends ItemSlashBlade implements IModifiableDisplay{
 
+    public static final UUID KOSHIRAE_BONUS = UUID.fromString("2fa5b0ad-5980-4550-8878-a3c4fcef3179");
     private final ToolDefinition toolDefinition;
 
     public ToolSlashBlade(Tier tier, int attackDamageIn, float attackSpeedIn, Properties builder, ToolDefinition definition) {
@@ -191,15 +200,40 @@ public class ToolSlashBlade extends ItemSlashBlade implements IModifiableDisplay
     @SuppressWarnings("unchecked")
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
         CompoundTag nbt = stack.getTag();
-        Multimap<Attribute, AttributeModifier> extraMap = (Multimap<Attribute, AttributeModifier>)(nbt != null && slot.getType() == Type.HAND ? this.getAttributeModifiers((IToolStackView)ToolStack.from(stack), (EquipmentSlot)slot) : ImmutableMultimap.of());
+        Multimap<Attribute, AttributeModifier> extraMap = (Multimap<Attribute, AttributeModifier>)(nbt != null && slot.getType() == Type.HAND ? this.getAttributeModifiers((IToolStackView)ToolStack.from(stack), (EquipmentSlot)slot) : ArrayListMultimap.create());
+        
+        if (slot == EquipmentSlot.MAINHAND) {
+            LazyOptional<ISlashBladeState> state = stack.getCapability(BLADESTATE);
+            state.ifPresent(s -> {
+                float baseAttackModifier = s.getBaseAttackModifier();
+                AttributeModifier base = new AttributeModifier(KOSHIRAE_BONUS,
+                        "Weapon modifier",
+                        (double) (baseAttackModifier * 0.8),
+                        AttributeModifier.Operation.ADDITION);
+                extraMap.put(Attributes.ATTACK_DAMAGE,base);
+
+                float rankAttackAmplifier = s.getAttackAmplifier();
+                extraMap.put(Attributes.ATTACK_DAMAGE,
+                        new AttributeModifier(ATTACK_DAMAGE_AMPLIFIER,
+                                "Weapon amplifier",
+                                (double)(rankAttackAmplifier),
+                                AttributeModifier.Operation.ADDITION));
+
+                extraMap.put(ForgeMod.REACH_DISTANCE.get(), new AttributeModifier(PLAYER_REACH_AMPLIFIER,
+                        "Reach amplifer",
+                        s.isBroken() ? 0 : 1.5, AttributeModifier.Operation.ADDITION));
+
+            });
+        }
         return extraMap;
     }
 
-    
-    @SuppressWarnings("null")
     @Override
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(IToolStackView tool, EquipmentSlot slot) {
-        return ModifiableItemUtil.getMeleeAttributeModifiers(tool, slot);
+        Multimap<Attribute, AttributeModifier> attribute = ModifiableItemUtil.getMeleeAttributeModifiers(tool, slot);
+        Multimap<Attribute, AttributeModifier> mutableAttribute = ArrayListMultimap.create(attribute);
+        
+        return mutableAttribute;
     }
 
     @Override
@@ -248,6 +282,12 @@ public class ToolSlashBlade extends ItemSlashBlade implements IModifiableDisplay
     public void inventoryTick(ItemStack stack, Level worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
         super.inventoryTick(stack, worldIn, entityIn, itemSlot, isSelected);
         ModifiableItemUtil.heldInventoryTick(stack, worldIn, entityIn, itemSlot, isSelected);
+        ToolStack tool = ToolStack.from(stack);
+        stack.getCapability(BLADESTATE).ifPresent(state->{
+            if(state.getModel().isPresent() && tool.getModifierLevel(TicEXModuleProvider.MODIFIER_KOSHIRAE.get()) < 1){
+                KoshiraeModifier.deserializeNBT(stack.getCapability(BLADESTATE), new CompoundTag());
+            }
+        });
     }
 
     @Override

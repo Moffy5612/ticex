@@ -1,0 +1,26 @@
+{
+    "type": "mekanism:reaction",
+    "itemInput": {
+      "ingredient": {
+        "item": "ticex:reconstruction_core"
+      }
+    },
+    "fluidInput": {
+      "amount": 1000,
+      "tag": "minecraft:water"
+    },
+    "gasInput": {
+      "amount": 1000,
+      "gas": "mekanism:polonium"
+    },
+    "duration": 100,
+    "itemOutput": {
+        "type": "forge:nbt",
+        "item": "ticex:reconstruction_core",
+        "nbt": "{Type: \"modifier.ticex.radiation_shield\"}"
+    },
+    "gasOutput": {
+      "gas": "mekanism:spent_nuclear_waste",
+      "amount": 1000
+    }
+  }

@@ -77,7 +77,6 @@ public class TicEXBladeRenderState extends RenderStateShard{
 
     static public void renderOverrided(ItemStack stack, WavefrontObject model, String target, List<Pair<ResourceLocation, MaterialVariantId>> textures, PoseStack  matrixStackIn, MultiBufferSource bufferIn, int packedLightIn, Function<ResourceLocation,RenderType> getRenderType, boolean enableEffect){
         for(Pair<ResourceLocation, MaterialVariantId> texture : textures){
-
             RenderType rt = getRenderType.apply(texture.getFirst());
             VertexConsumer vb = bufferIn.getBuffer(rt);
 
@@ -90,12 +89,10 @@ public class TicEXBladeRenderState extends RenderStateShard{
             Face.setCol(col);
             Face.setLightMap(packedLightIn);
             Face.setMatrix(matrixStackIn);
-            model.tessellateOnly(vb, target);
-
-
+            model.tessellateOnly(vb, new String[]{target});
             if(stack.hasFoil() && enableEffect){
                 vb = bufferIn.getBuffer(BladeRenderState.BLADE_GLINT);
-                model.tessellateOnly(vb, target);
+                model.tessellateOnly(vb, new String[]{target});
             }
 
             Face.resetMatrix();
