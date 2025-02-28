@@ -11,7 +11,6 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
-import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.common.registration.CastItemObject;
 import slimeknights.tconstruct.common.registration.ItemDeferredRegisterExtension;

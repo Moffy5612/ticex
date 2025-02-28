@@ -17,7 +17,6 @@ import moze_intel.projecte.gameObjs.items.IItemMode;
 import moze_intel.projecte.gameObjs.items.ItemPE;
 import moze_intel.projecte.gameObjs.registries.PESoundEvents;
 import moze_intel.projecte.utils.PlayerHelper;
-import moze_intel.projecte.utils.ToolHelper;
 import moze_intel.projecte.utils.text.ILangEntry;
 import moze_intel.projecte.utils.text.PELang;
 import net.minecraft.Util;

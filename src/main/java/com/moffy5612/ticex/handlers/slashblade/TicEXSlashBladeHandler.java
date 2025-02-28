@@ -3,9 +3,7 @@ package com.moffy5612.ticex.handlers.slashblade;
 import com.moffy5612.addonlib.api.ContentHandlerBase;
 import com.moffy5612.ticex.events.TicEXSlashBladeEvent;
 
-import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;

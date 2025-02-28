@@ -2,7 +2,6 @@ package com.moffy5612.ticex.modifiers;
 
 import java.util.Optional;
 import java.util.UUID;
-import java.util.function.BiConsumer;
 
 import mods.flammpfeil.slashblade.capability.slashblade.ComboState;
 import mods.flammpfeil.slashblade.capability.slashblade.ISlashBladeState;
