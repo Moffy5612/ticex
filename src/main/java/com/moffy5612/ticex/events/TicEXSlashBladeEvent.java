@@ -24,6 +24,7 @@ import mods.flammpfeil.slashblade.client.renderer.CarryType;
 import mods.flammpfeil.slashblade.client.renderer.model.BladeModel;
 import mods.flammpfeil.slashblade.entity.BladeStandEntity;
 import mods.flammpfeil.slashblade.entity.EntityAbstractSummonedSword;
+import mods.flammpfeil.slashblade.event.CapabilityAttachHandler;
 import mods.flammpfeil.slashblade.event.InputCommandEvent;
 import mods.flammpfeil.slashblade.event.client.RenderOverrideEvent;
 import mods.flammpfeil.slashblade.item.ItemSlashBlade;
@@ -165,7 +166,11 @@ public class TicEXSlashBladeEvent {
                     LazyOptional<ISlashBladeState> state = slashbladeStack.getCapability(BladeStateCapabilityProvider.CAP);
                     CompoundTag nbt = stack.getTag();
                     ToolStack toolStack = ToolStack.from(slashbladeStack);
-                    if(nbt != null && toolStack.getFreeSlots(SlotType.ABILITY) > 0){
+                    int slots =  toolStack.getFreeSlots(SlotType.ABILITY);
+                    if(nbt != null && slots > 0){
+                        if(toolStack.getModifierLevel(TicEXModuleProvider.MODIFIER_KOSHIRAE.get()) > 0){
+                            toolStack.removeModifier(TicEXModuleProvider.MODIFIER_KOSHIRAE.getId(), 1);
+                        }
                         KoshiraeModifier.deserializeNBT(state, nbt.getCompound("BladeStateTag"));
                         stack.shrink(1);
                         toolStack.addModifier(TicEXModuleProvider.MODIFIER_KOSHIRAE.getId(), 1);

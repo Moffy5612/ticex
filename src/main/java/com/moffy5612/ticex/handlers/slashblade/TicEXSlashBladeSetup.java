@@ -11,6 +11,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 public class TicEXSlashBladeSetup {
 
     public static void setup(FMLCommonSetupEvent event){
+
         TicEXModuleProvider.MODIFIER_KOSHIRAE = TicEXModuleProvider.MODIFIERS.register("koshirae", KoshiraeModifier::new);
     }
 

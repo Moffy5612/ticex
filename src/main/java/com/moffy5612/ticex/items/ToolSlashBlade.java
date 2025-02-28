@@ -37,7 +37,6 @@ import net.minecraft.world.entity.EquipmentSlot.Type;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier.Operation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -286,6 +285,8 @@ public class ToolSlashBlade extends ItemSlashBlade implements IModifiableDisplay
         stack.getCapability(BLADESTATE).ifPresent(state->{
             if(state.getModel().isPresent() && tool.getModifierLevel(TicEXModuleProvider.MODIFIER_KOSHIRAE.get()) < 1){
                 KoshiraeModifier.deserializeNBT(stack.getCapability(BLADESTATE), new CompoundTag());
+            } else if (state.getModel().isEmpty() && tool.getModifierLevel(TicEXModuleProvider.MODIFIER_KOSHIRAE.get()) > 0){
+                tool.removeModifier(TicEXModuleProvider.MODIFIER_KOSHIRAE.getId(), 1);
             }
         });
     }
