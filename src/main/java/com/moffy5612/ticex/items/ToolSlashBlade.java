@@ -206,7 +206,7 @@ public class ToolSlashBlade extends ItemSlashBlade implements IModifiableDisplay
                 float baseAttackModifier = s.getBaseAttackModifier();
                 AttributeModifier base = new AttributeModifier(KOSHIRAE_BONUS,
                         "Weapon modifier",
-                        (double) (baseAttackModifier * 0.8),
+                        (double) (baseAttackModifier * 0.7),
                         AttributeModifier.Operation.ADDITION);
                 extraMap.put(Attributes.ATTACK_DAMAGE,base);
 

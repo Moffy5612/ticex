@@ -1,5 +1,6 @@
 package com.moffy5612.ticex.handlers.slashblade;
 
+import com.moffy5612.ticex.events.TicEXSlashBladeEvent;
 import com.moffy5612.ticex.handlers.TicEXModuleProvider;
 import com.moffy5612.ticex.modifiers.KoshiraeModifier;
 

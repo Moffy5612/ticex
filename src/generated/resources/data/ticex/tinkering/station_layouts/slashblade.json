@@ -19,7 +19,7 @@
         "icon": "tconstruct:tough_handle",
         "translation_key": "item.tconstruct.tough_handle",
         "x": 12,
-        "y": 62,
+        "y": 26,
         "filter": {
           "item": "tconstruct:tough_handle"
         }
@@ -28,7 +28,7 @@
         "icon": "ticex:slashblade_saya",
         "translation_key": "item.ticex.slashblade_saya",
         "x": 48,
-        "y": 26,
+        "y": 62,
         "filter": {
           "item": "ticex:slashblade_saya"
         }

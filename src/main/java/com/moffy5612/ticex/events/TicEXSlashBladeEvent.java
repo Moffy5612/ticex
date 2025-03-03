@@ -38,7 +38,6 @@ import mods.flammpfeil.slashblade.util.TargetSelector;
 import mods.flammpfeil.slashblade.util.VectorHelper;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -59,6 +58,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
@@ -145,6 +146,7 @@ public class TicEXSlashBladeEvent {
         }
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static void onModelBake(final ModelBakeEvent event){
         if(!TicEX.SLASH_BLADE_HANDLER.isModsLoaded())return;
         ModelResourceLocation loc = new ModelResourceLocation(
@@ -191,7 +193,8 @@ public class TicEXSlashBladeEvent {
                     player.getInventory().add(reconstCore);
                 }
             }
-            
         }
     }
+
+
 }
