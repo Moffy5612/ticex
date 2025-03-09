@@ -1,0 +1,32 @@
+{
+    "itemGroup.tab.ticex": "TiCEX Items",
+
+    "item.ticex.reconstruction_core": "Reconstruction Core",
+    "item.ticex.reconstruction_core.desc": "§8Modifiering Ingredients",
+    "item.ticex.molten_infinity_bucket": "Flow of Infinity Bucket",
+    
+    "fluid.tconstruct.molten_infinity": "Flow of Infinity",
+
+    "material.ticex.infinity": "Infinity",
+
+    "modifier.ticex.omnipotence": "Omnipotence",
+    "modifier.ticex.omnipotence.flavor": "Everything will converge 1",
+    "modifier.ticex.omnipotence.description":"Tool learns instant-kill & instant-mine",
+    "modifier.ticex.cosmic_unbreakable": "Unbreakable",
+    "modifier.ticex.cosmic_unbreakable.flavor": "Thunderstruck...",
+    "modifier.ticex.cosmic_unbreakable.description":"Tool gets there which is an eternal life",
+    "modifier.ticex.cosmic_luck": "Luck X",
+    "modifier.ticex.cosmic_luck.flavor": "Passive income!",
+    "modifier.ticex.cosmic_luck.description":"Tool enjoys blessed with much luck",
+    "modifier.ticex.bedrock_breaker": "Bedrock Breaker",
+    "modifier.ticex.bedrock_breaker.flavor": "It's time to rewrite the story",
+    "modifier.ticex.bedrock_breaker.description":"Tool can break bedrock",
+    "modifier.ticex.transcendental": "Transcendental",
+    "modifier.ticex.transcendental.flavor": "To beyond null",
+    "modifier.ticex.transcendental.description":"Tool reduces damage taken",
+
+    "stat.tconstruct.harvest_tier.ticex.infinity": "Infinity",
+
+    "attribute.ticex.damage_taken": "Damage Taken",
+    "attribute.ticex.healing_received": "Healing Received"
+}

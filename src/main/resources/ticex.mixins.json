@@ -1,0 +1,15 @@
+{
+    "required": true,
+    "package": "moffy.ticex.mixin",
+    "compatibilityLevel": "JAVA_17",
+    "refmap": "ticex.refmap.json",
+    "mixins": [
+        "TicEXEntityMixin"
+    ],
+    "client": [],
+    "server": [],
+    "injectors": {
+        "defaultRequire": 1
+    },
+    "minVersion": 0.7
+}

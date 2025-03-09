@@ -1,0 +1,15 @@
+{
+    "modifier.ticex": {
+        "omnipotence": "#453ec7",
+        "cosmic_unbreakable": "#349ad1",
+        "cosmic_luck":"#34d170",
+        "bedrock_breaker":"#ced134",
+        "transcendental":"#8021b8"
+    },
+    "material.ticex": {
+        "infinity": "#FF5555"
+    },
+    "harvest_tier.ticex": {
+		"infinity": "#FF5555"
+	}
+}

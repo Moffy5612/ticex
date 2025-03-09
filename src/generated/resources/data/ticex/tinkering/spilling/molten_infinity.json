@@ -1,0 +1,18 @@
+{
+    "condition": {
+      "modid": "avaritia",
+      "type": "forge:mod_loaded"
+    },
+    "fluid": {
+      "tag": "forge:molten_infinity",
+      "amount": 10
+    },
+    "effects": [
+      {
+        "type": "tconstruct:effect",
+        "name": "minecraft:instant_damage",
+        "time": 1,
+        "level": 255
+      }
+    ]
+  }

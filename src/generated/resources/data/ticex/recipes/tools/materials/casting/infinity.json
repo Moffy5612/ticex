@@ -1,0 +1,9 @@
+{
+    "type": "tconstruct:material_fluid",
+    "fluid": {
+      "amount": 90,
+      "tag": "ticex:molten_infinity"
+    },
+    "output": "ticex:infinity",
+    "temperature": 3180
+  }

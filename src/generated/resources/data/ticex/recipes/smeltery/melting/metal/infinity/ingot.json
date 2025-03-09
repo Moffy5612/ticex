@@ -1,0 +1,21 @@
+{
+    "type": "tconstruct:melting",
+    "conditions": [
+      {
+        "value": {
+          "tag": "forge:ingots/infinity",
+          "type": "forge:tag_empty"
+        },
+        "type": "forge:not"
+      }
+    ],
+    "ingredient": {
+      "tag": "forge:ingots/infinity"
+    },
+    "result": {
+      "fluid": "ticex:molten_infinity",
+      "amount": 90
+    },
+    "temperature": 3180,
+    "time": 60
+  }

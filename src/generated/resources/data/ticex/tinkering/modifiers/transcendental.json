@@ -1,0 +1,22 @@
+{
+    "level_display": "tconstruct:no_levels",
+    "modules": [
+      {
+        "type": "tconstruct:attribute",
+        "allow_broken": false,
+        "each_level": -0.25,
+        "operation": "addition",
+        "attribute": "ticex:damage_taken",
+        "slots": [
+          "feet",
+          "legs",
+          "chest",
+          "head"
+        ],
+        "unique": "ticex.modifier.transcendental",
+        "tooltip_style": "percent"
+      }
+    ],
+    "priority": 999,
+    "tooltip_display": "always"
+  }

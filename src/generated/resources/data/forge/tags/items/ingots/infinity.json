@@ -1,0 +1,9 @@
+{
+    "replace": false,
+    "values": [
+      {
+        "id": "avaritia:infinity_ingot",
+        "required": false
+      }
+    ]
+  }
