@@ -129,6 +129,11 @@ repositories {
 
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:flat_dir_resolver
+    maven {
+        url = "https://cursemaven.com"
+    }
+
+    
     flatDir {
         dir './libs'
     }
@@ -145,11 +150,22 @@ dependencies {
 
     implementation fg.deobf("blank:addonapi:0.2.0")
 
-    implementation fg.deobf("blank:Mantle-1.20.1:1.11.44")
-    implementation fg.deobf("blank:TConstruct-1.20.1:3.9.2.34")
+    implementation fg.deobf("curse.maven:mantle-74924:6258424")
+    implementation fg.deobf("curse.maven:tinkers-construct-74072:6266282")
 
-    implementation fg.deobf("blank:Re-Avaritia-forged-1.20.1:1.3.8.3")
+    implementation fg.deobf("curse.maven:re-avaritia-623969:6264467")
 
+    runtimeOnly fg.deobf("curse.maven:jei-238222:6075247")
+    runtimeOnly fg.deobf("curse.maven:mouse-tweaks-60089:5338457")
+    runtimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
+    runtimeOnly fg.deobf("curse.maven:radium-reforged-570017:5706069")
+    runtimeOnly fg.deobf("curse.maven:bookshelf-228525:5423987")
+    runtimeOnly fg.deobf("curse.maven:modernfix-790626:6125143")
+    runtimeOnly fg.deobf("curse.maven:ferritecore-429235:4810975")
+    runtimeOnly fg.deobf("curse.maven:jade-324717:6271651")
+    runtimeOnly fg.deobf("curse.maven:fps-reducer-280294:4586784")
+
+    runtimeOnly fg.deobf("curse.maven:the-twilight-forest-227639:5468648")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

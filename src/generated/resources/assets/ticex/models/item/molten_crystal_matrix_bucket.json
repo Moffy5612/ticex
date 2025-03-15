@@ -1,0 +1,5 @@
+{
+    "parent": "forge:item/bucket_drip",
+    "fluid": "ticex:molten_crystal_matrix",
+    "loader": "tconstruct:fluid_container"
+  }

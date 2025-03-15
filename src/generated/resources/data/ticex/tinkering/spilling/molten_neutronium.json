@@ -1,0 +1,18 @@
+{
+    "condition": {
+      "modid": "avaritia",
+      "type": "forge:mod_loaded"
+    },
+    "fluid": {
+      "tag": "ticex:molten_neutronium",
+      "amount": 10
+    },
+    "effects": [
+      {
+        "type": "tconstruct:effect",
+        "name": "minecraft:slowness",
+        "time": 1,
+        "level": 20
+      }
+    ]
+  }

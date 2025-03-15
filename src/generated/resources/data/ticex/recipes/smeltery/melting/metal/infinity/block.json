@@ -3,17 +3,17 @@
     "conditions": [
       {
         "value": {
-          "tag": "forge:storage_blocks/infinity",
+          "tag": "forge:storage_blocks/crystal_matrix",
           "type": "forge:tag_empty"
         },
         "type": "forge:not"
       }
     ],
     "ingredient": {
-      "tag": "forge:storage_blocks/infinity"
+      "tag": "forge:storage_blocks/crystal_matrix"
     },
     "result": {
-      "fluid": "ticex:molten_infinity",
+      "fluid": "ticex:molten_crystal_matrix",
       "amount": 810
     },
     "temperature": 6360,

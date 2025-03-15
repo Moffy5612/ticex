@@ -1,0 +1,12 @@
+{
+    "type": "tconstruct:melting",
+    "ingredient": {
+      "item": "ticex:reconstruction_core"
+    },
+    "result": {
+      "amount": 250,
+      "fluid": "ticex:molten_reconstruction_core"
+    },
+    "temperature": 1000,
+    "time": 32
+  }

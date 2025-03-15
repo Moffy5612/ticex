@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import moffy.ticex.modules.TicEXRegister;
+import moffy.ticex.modules.TicEXRegistry;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 
 @Mixin(AttributeSupplier.Builder.class)
@@ -16,6 +16,6 @@ public class TicEXEntityMixin {
         cancellable = true
     )
     public void addExtraAttribute(CallbackInfoReturnable<AttributeSupplier> info){
-        ((AttributeSupplier.Builder)((Object)this)).add(TicEXRegister.HEALING_RECEIVED.get()).add(TicEXRegister.DAMAGE_TAKEN.get());
+        ((AttributeSupplier.Builder)((Object)this)).add(TicEXRegistry.HEALING_RECEIVED.get()).add(TicEXRegistry.DAMAGE_TAKEN.get());
     }
 }

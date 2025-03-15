@@ -1,0 +1,14 @@
+{
+    "type": "tconstruct:modifier",
+    "inputs": [
+      { "item":"minecraft:elytra" },
+      { "item":"avaritia:infinity_catalyst" }
+    ],
+    "tools": { "tag": "tconstruct:modifiable/armor/worn" }
+    ,
+    "slots": {
+      "defense": 1
+    },
+    "allow_crystal": true,
+    "result": "ticex:celestial"
+  }

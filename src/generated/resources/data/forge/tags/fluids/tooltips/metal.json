@@ -1,6 +1,8 @@
 {
     "replace": false,
     "values": [
-        "#forge:molten_infinity"
+        "#forge:molten_infinity",
+        "#forge:molten_neutronium",
+        "#forge:molten_crystal_matrix"
     ]
 }

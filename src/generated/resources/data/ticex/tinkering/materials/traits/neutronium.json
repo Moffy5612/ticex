@@ -1,0 +1,15 @@
+{
+    "default": [],
+    "perStat": {
+      "tconstruct:armor": [
+        {
+          "name": "ticex:dense",
+          "level": 1
+        },
+        {
+          "level": 1,
+          "name": "ticex:condensing"
+        }
+      ]
+    }
+  }

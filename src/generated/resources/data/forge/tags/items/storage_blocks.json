@@ -1,6 +1,7 @@
 {
     "replace": false,
     "values": [
-      "#forge:storage_blocks/infinity"
+      "#forge:storage_blocks/infinity",
+      "#forge:storage_blocks/neutronium"
     ]
   }

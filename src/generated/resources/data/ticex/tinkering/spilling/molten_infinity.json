@@ -4,7 +4,7 @@
       "type": "forge:mod_loaded"
     },
     "fluid": {
-      "tag": "forge:molten_infinity",
+      "tag": "ticex:molten_infinity",
       "amount": 10
     },
     "effects": [

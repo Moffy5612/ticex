@@ -1,0 +1,21 @@
+{
+    "type": "tconstruct:melting",
+    "conditions": [
+      {
+        "value": {
+          "tag": "forge:storage_blocks/neutronium",
+          "type": "forge:tag_empty"
+        },
+        "type": "forge:not"
+      }
+    ],
+    "ingredient": {
+      "tag": "forge:storage_blocks/neutronium"
+    },
+    "result": {
+      "fluid": "ticex:molten_neutronium",
+      "amount": 810
+    },
+    "temperature": 6360,
+    "time": 179
+  }

@@ -1,0 +1,9 @@
+{
+    "type": "tconstruct:material_melting",
+    "input": "ticex:crystal_matrix",
+    "result": {
+      "amount": 90,
+      "fluid": "ticex:molten_crystal_matrix"
+    },
+    "temperature": 3180
+  }

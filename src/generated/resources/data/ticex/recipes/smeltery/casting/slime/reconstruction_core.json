@@ -1,0 +1,11 @@
+{
+    "type": "tconstruct:casting_table",
+    "fluid": {
+      "tag": "forge:molten_reconstruction_core",
+      "amount": 250
+    },
+    "result": {
+      "item": "ticex:reconstruction_core"
+    },
+    "cooling_time": 60
+  }

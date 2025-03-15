@@ -1,0 +1,21 @@
+{
+    "type": "tconstruct:melting",
+    "conditions": [
+      {
+        "value": {
+          "tag": "forge:ingots/crystal_matrix",
+          "type": "forge:tag_empty"
+        },
+        "type": "forge:not"
+      }
+    ],
+    "ingredient": {
+      "tag": "forge:ingots/crystal_matrix"
+    },
+    "result": {
+      "fluid": "ticex:molten_crystal_matrix",
+      "amount": 90
+    },
+    "temperature": 1050,
+    "time": 60
+  }

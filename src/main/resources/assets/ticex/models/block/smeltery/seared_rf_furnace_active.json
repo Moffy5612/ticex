@@ -1,0 +1,8 @@
+{
+    "parent": "tconstruct:block/template/io_fluid",
+    "textures": {
+      "drain": "ticex:block/smeltery/seared_rf_furnace_active",
+      "bricks": "tconstruct:block/smeltery/seared/bricks",
+      "back": "tconstruct:block/smeltery/io/back"
+    }
+}

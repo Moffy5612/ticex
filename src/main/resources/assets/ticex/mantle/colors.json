@@ -4,10 +4,16 @@
         "cosmic_unbreakable": "#349ad1",
         "cosmic_luck":"#34d170",
         "bedrock_breaker":"#ced134",
-        "transcendental":"#8021b8"
+        "transcendental":"#8021b8",
+        "celestial":"#2ddbfa",
+        "condensing":"#ededed",
+        "dense":"#cfcfcf",
+        "aftershock": "#42e0f5"
     },
     "material.ticex": {
-        "infinity": "#FF5555"
+        "infinity": "#FF5555",
+        "neutronium": "#0d0d0d",
+        "crystal_matrix": "#42e0f5"
     },
     "harvest_tier.ticex": {
 		"infinity": "#FF5555"

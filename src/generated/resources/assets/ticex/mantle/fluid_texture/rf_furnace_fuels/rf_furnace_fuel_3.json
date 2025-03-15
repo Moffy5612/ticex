@@ -1,0 +1,5 @@
+{
+    "color": "FFFFFFFF",
+    "flowing": "ticex:fluid/rf_furnace_fuel/flowing",
+    "still": "ticex:fluid/rf_furnace_fuel/still"
+  }

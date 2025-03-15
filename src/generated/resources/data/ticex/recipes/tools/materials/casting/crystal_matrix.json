@@ -1,0 +1,9 @@
+{
+    "type": "tconstruct:material_fluid",
+    "fluid": {
+      "amount": 90,
+      "tag": "forge:molten_crystal_matrix"
+    },
+    "output": "ticex:crystal_matrix",
+    "temperature": 1050
+  }

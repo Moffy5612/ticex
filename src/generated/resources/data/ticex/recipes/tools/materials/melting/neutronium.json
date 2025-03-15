@@ -1,0 +1,9 @@
+{
+    "type": "tconstruct:material_melting",
+    "input": "ticex:neutronium",
+    "result": {
+      "amount": 90,
+      "fluid": "ticex:molten_neutronium"
+    },
+    "temperature": 1400
+  }
